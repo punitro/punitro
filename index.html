@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="PUNITRO creates modern, responsive websites for shops, schools and businesses.">
+<title>PUNITRO | Your Vision. Our Creation.</title>
+
+<style>
+:root {
+    --bg: #070b14;
+    --panel: #0e1728;
+    --blue: #087cff;
+    --cyan: #00d9ff;
+    --text: #f5f8ff;
+    --muted: #a8b5ca;
+    --line: rgba(0,217,255,.2);
+    --green: #25d366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1140px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 80px 0;
+    scroll-margin-top: 85px;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
+p {
+    color: var(--muted);
+}
+
+.accent {
+    color: var(--cyan);
+}
+
+.section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px;
+}
+
+.section-head h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 14px 0;
+}
+
+.pill {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid var(--line);
+    border-radius: 50px;
+    color: var(--cyan);
+    background: #00d9ff0c;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,11,20,.96);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(15px);
+}
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #dce7f7;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: white;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background: linear-gradient(110deg, var(--blue), #0058dc);
+    color: white;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px #007bff35;
+}
+
+.btn.secondary {
+    background: transparent;
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.btn.small {
+    padding: 9px 14px;
+}
+
+.hero {
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 80% 25%, #087cff2b, transparent 40%),
+        radial-gradient(ellipse at 10% 90%, #00d9ff15, transparent 40%);
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.micro {
+    font-size: 13px !important;
+    margin-top: 23px;
+}
+
+.trust-strip {
+    padding: 25px 0;
+    border-block: 1px solid var(--line);
+    background: #0d1524;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.trust-item strong {
+    display: block;
+    color: var(--cyan);
+}
+
+.trust-item span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.services-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(145deg, #111e32, #0a111f);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00d9ff80;
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #087cff22;
+    border: 1px solid var(--line);
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.about {
+    background: #0b1321;
+    border-block: 1px solid #ffffff08;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.about h2 {
+    font-size: clamp(31px, 4vw, 45px);
+    margin: 14px 0 20px;
+}
+
+.about-copy p {
+    margin-bottom: 14px;
+}
+
+.brand-panel {
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: radial-gradient(circle at top right, #087cff28, transparent 50%), #080e19;
+}
+
+.brand-panel img {
+    width: 180px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.tagline {
+    color: var(--cyan);
+    <!--margin-top: 15px;-->
+    margin-bottom: 22px;
+}
+
+.check {
+    display: flex;
+    gap: 12px;
+    margin: 14px 0;
+    color: #dce7f7;
+}
+
+.check b {
+    color: var(--cyan);
+}
+
+.portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project-visual {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #087cff30, transparent 68%), #080e19;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.project-visual .symbol {
+    font-size: 42px;
+}
+
+.project-visual h3 {
+    font-size: 23px;
+}
+
+.project-card p {
+    margin: 10px 0 17px;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid var(--line);
+    color: var(--cyan);
+    border-radius: 30px;
+    padding: 4px 9px;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.project-link {
+    color: var(--cyan);
+    font-weight: bold;
+}
+
+.process-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.process-card {
+    text-align: center;
+    padding: 24px 15px;
+}
+
+.number {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* FEATURES */
+
+.features-section {
+    background: #0b1321;
+    border-block: 1px solid #ffffff08;
+}
+
+.features-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-card {
+    padding: 23px;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: var(--panel);
+}
+
+.feature-card .icon {
+    margin-bottom: 14px;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 14px;
+}
+
+/* WHY CHOOSE PUNITRO */
+
+.why-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.why-card {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.why-card .icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.why-card p {
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+/* FAQ */
+
+.faq-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 13px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--panel);
+}
+
+.faq-item summary {
+    padding: 19px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.faq-item summary::after {
+    content: "+";
+    color: var(--cyan);
+    font-size: 22px;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-answer {
+    padding: 0 19px 19px;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    background:
+        radial-gradient(ellipse at top left, #087cff20, transparent 45%),
+        #0b1321;
+    border-top: 1px solid var(--line);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.contact-info h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    padding: 16px;
+    margin-bottom: 13px;
+    border: 1px solid var(--line);
+    background: #0e1728;
+    border-radius: 12px;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-item p,
+.contact-item a {
+    font-size: 14px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: var(--cyan);
+}
+
+.contact-form {
+    padding: 27px;
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    background: #0e1728;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.contact-form > p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    color: #dce7f7;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    background: #070d18;
+    border: 1px solid #253751;
+    border-radius: 8px;
+    color: white;
+    font: inherit;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--cyan);
+}
+
+.form-group textarea {
+    min-height: 115px;
+    resize: vertical;
+}
+
+.form-group select option {
+    background: #0e1728;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+.form-note {
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* FINAL CALL TO ACTION */
+
+.cta-box {
+    padding: 40px 25px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, #087cff28, transparent 70%),
+        #0e1728;
+}
+
+.cta-box h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 14px;
+}
+
+.cta-box p {
+    margin-bottom: 22px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    background: #060a11;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    width: 105px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.footer-content p {
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--cyan);
+}
+
+/* FLOATING BUTTONS */
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 90;
+    width: 57px;
+    height: 57px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-size: 27px;
+    box-shadow: 0 5px 22px #0008;
+}
+
+.back-top {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 90;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #101d30;
+    color: var(--cyan);
+    font-size: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .services-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .nav {
+        min-height: 70px;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 58px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #080e19;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+        border-bottom: 1px solid #ffffff0d;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .services-grid,
+    .features-grid,
+    .portfolio-grid,
+    .why-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        gap: 25px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .actions .btn {
+        width: 100%;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="container nav">
+        <a href="#home" class="logo" aria-label="PUNITRO Home">
+            <img src="punitro.png" alt="PUNITRO Logo">
+        </a>
+
+        <button class="menu-btn" id="menuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content reveal">
+            <span class="pill">WELCOME TO PUNITRO</span>
+
+            <h1>
+                We Build Websites<br>
+                That Make Your<br>
+                Business <span>Stand Out.</span>
+            </h1>
+
+            <p>
+                We help shops, schools, startups and small businesses
+                build a strong online presence with modern, responsive
+                and professional websites.
+            </p>
+
+            <div class="actions">
+                <a href="#portfolio" class="btn">Explore Our Work ↗</a>
+                <a href="#contact" class="btn secondary">Let's Talk</a>
+            </div>
+
+            <p class="micro">
+                ✓ Mobile-friendly &nbsp;
+                ✓ Modern design &nbsp;
+                ✓ Business-focused
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+    <div class="container trust-grid">
+        <div class="trust-item">
+            <strong>Responsive</strong>
+            <span>Works across screen sizes</span>
+        </div>
+
+        <div class="trust-item">
+            <strong>Modern</strong>
+            <span>Clean visual design</span>
+        </div>
+
+        <div class="trust-item">
+            <strong>Fast</strong>
+            <span>Designed for easy browsing</span>
+        </div>
+
+        <div class="trust-item">
+            <strong>Connected</strong>
+            <span>Easy customer enquiries</span>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="pill">WHAT WE DO</span>
+            <h2>Our <span class="accent">Services</span></h2>
+            <p>
+                Practical website solutions to help your business
+                look professional and reach more customers online.
+            </p>
+        </div>
+
+        <div class="grid services-grid">
+
+            <article class="card reveal">
+                <div class="icon">🌐</div>
+                <h3>Business Websites</h3>
+                <p>
+                    Professional websites for local shops,
+                    service providers and growing businesses.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🏫</div>
+                <h3>School Websites</h3>
+                <p>
+                    Websites to present school information,
+                    facilities, activities and contact details.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🛍️</div>
+                <h3>Shop Websites</h3>
+                <p>
+                    Display your products, shop photos,
+                    location and contact information.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">📱</div>
+                <h3>Mobile-Friendly Design</h3>
+                <p>
+                    Responsive layouts designed to work on
+                    smartphones, tablets and computers.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">💬</div>
+                <h3>WhatsApp Integration</h3>
+                <p>
+                    Help visitors contact your business
+                    directly through WhatsApp.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🎨</div>
+                <h3>Website Redesign</h3>
+                <p>
+                    Improve the appearance, layout and usability
+                    of an existing website.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🖼️</div>
+                <h3>Photo Galleries</h3>
+                <p>
+                    Present your business, products, events
+                    and facilities through images.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">📍</div>
+                <h3>Location & Contact</h3>
+                <p>
+                    Make it easier for customers to find
+                    your business and contact you.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🚀</div>
+                <h3>Website Publishing</h3>
+                <p>
+                    Assistance with publishing eligible
+                    static websites online.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="pill">BUILT FOR YOUR BUSINESS</span>
+            <h2>Features That <span class="accent">Matter</span></h2>
+            <p>
+                We focus on useful features that help visitors
+                understand your business and get in touch.
+            </p>
+        </div>
+
+        <div class="grid features-grid">
+
+            <article class="feature-card reveal">
+                <div class="icon">📲</div>
+                <h3>Responsive Layout</h3>
+                <p>
+                    A flexible layout for mobile, tablet
+                    and desktop screens.
+                </p>
+            </article>
+
+            <article class="feature-card reveal">
+                <div class="icon">⚡</div>
+                <h3>Lightweight Design</h3>
+                <p>
+                    Carefully structured pages that avoid
+                    unnecessary visual clutter.
+                </p>
+            </article>
+
+            <article class="feature-card reveal">
+                <div class="icon">🔗</div>
+                <h3>Useful Links</h3>
+                <p>
+                    Clear navigation and convenient links
+                    to important business information.
+                </p>
+            </article>
+
+            <article class="feature-card reveal">
+                <div class="icon">📨</div>
+                <h3>Enquiry Form</h3>
+                <p>
+                    Let potential customers prepare an enquiry
+                    and send it through WhatsApp.
+                </p>
+            </article>
+
+            <article class="feature-card reveal">
+                <div class="icon">🧭</div>
+                <h3>Easy Navigation</h3>
+                <p>
+                    Simple menus help visitors find
+                    information without confusion.
+                </p>
+            </article>
+
+            <article class="feature-card reveal">
+                <div class="icon">✨</div>
+                <h3>Modern Presentation</h3>
+                <p>
+                    Consistent typography, spacing and
+                    visual styling for a professional look.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container about-grid">
+
+        <div class="about-copy reveal">
+            <span class="pill">ABOUT PUNITRO</span>
+
+            <h2>
+                Turning Your Ideas Into
+                <span class="accent">Digital Experiences.</span>
+            </h2>
+
+            <p>
+                PUNITRO is a website creation brand focused on
+                helping small businesses, shops and institutions
+                present themselves professionally online.
+            </p>
+
+            <p>
+                Our goal is to create websites that are easy
+                to navigate, visually appealing and useful
+                for everyday customers.
+            </p>
+
+            <div class="check">
+                <b>✓</b>
+                <span>Designs adapted to your business needs</span>
+            </div>
+
+            <div class="check">
+                <b>✓</b>
+                <span>Clear contact and enquiry options</span>
+            </div>
+
+            <div class="check">
+                <b>✓</b>
+                <span>Support with website publishing</span>
+            </div>
+
+            <br>
+
+            <a href="#contact" class="btn">Discuss Your Project ↗</a>
+        </div>
+
+        <div class="brand-panel reveal">
+            <img src="punitro.png" alt="PUNITRO brand logo">
+
+            <h3>PUNITRO</h3>
+
+            <p class="tagline">Your Vision. Our Creation.</p>
+
+            <p>
+                Helping businesses build their online presence
+                through simple, modern and responsive websites.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <span class="pill">OUR WORK</span>
+            <h2>Selected <span class="accent">Projects</span></h2>
+            <p>
+                Explore website projects and demonstrations
+                created to show our design approach.
+            </p>
+        </div>
+
+        <div class="grid portfolio-grid">
+
+            <article class="card project-card reveal">
+                <div class="project-visual">
+                    <div>
+                        <div class="symbol">🌱</div>
+                        <h3>GMR Agro Care</h3>
+                        <p>Seeds • Fertilizers • Pesticides</p>
+                    </div>
+                </div>
+
+                <span class="tag">BUSINESS WEBSITE</span>
+
+                <h3>GMR Agro Care Website</h3>
+
+                <p>
+                    A website for an agricultural shop,
+                    presenting its business information
+                    and helping customers get in touch.
+                </p>
+
+                <a
+                    class="project-link"
+                    href="https://punitro.github.io/gmr-agro-care/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Live Website ↗
+                </a>
+            </article>
+
+            <article class="card project-card reveal">
+                <div class="project-visual">
+                    <div>
+                        <div class="symbol">💻</div>
+                        <h3>PUNITRO</h3>
+                        <p>Your Vision. Our Creation.</p>
+                    </div>
+                </div>
+
+                <span class="tag">BRAND WEBSITE</span>
+
+                <h3>PUNITRO Website</h3>
+
+                <p>
+                    A website showcasing our services,
+                    approach, portfolio and contact options.
+                </p>
+
+                <a class="project-link" href="#home">
+                    Explore This Website ↑
+                </a>
+            </article>
+
+        </div>
+
+        <p style="text-align:center;margin-top:25px;font-size:13px">
+            Portfolio projects are examples of our work.
+            Project details can be updated as new work is completed.
+        </p>
+
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="features-section">
+    <div class="container">
+
+        <div class="section-head reveal">
+            <span class="pill">HOW WE WORK</span> l
+            <h2>Our Simple <span class="accent">Process</span></h2>
+            <p>
+                A straightforward process to move your
+                website idea from planning to publication.
+            </p>
+        </div>
+
+        <div class="grid process-grid">
+
+            <article class="card process-card reveal">
+                <div class="number">01</div>
+                <h3>Understand</h3>
+                <p>
+                    Learn about your business, goals
+                    and the information your website needs.
+                </p>
+            </article>
+
+            <article class="card process-card reveal">
+                <div class="number">02</div>
+                <h3>Design</h3>
+                <p>
+                    Plan the layout, colours, sections
+                    and content for your website.
+                </p>
+            </article>
+
+            <article class="card process-card reveal">
+                <div class="number">03</div>
+                <h3>Build</h3>
+                <p>
+                    Create the pages and add the
+                    agreed content and features.
+                </p>
+            </article>
+
+            <article class="card process-card reveal">
+                <div class="number">04</div>
+                <h3>Publish</h3>
+                <p>
+                    Test the website and help make
+                    it available online.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE PUNITRO -->
+<section id="why">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="pill">THE PUNITRO APPROACH</span>
+            <h2>Why Choose <span class="accent">PUNITRO?</span></h2>
+            <p>We focus on practical websites that help businesses present themselves clearly online.</p>
+        </div>
+
+        <div class="grid why-grid">
+            <article class="card why-card reveal">
+                <div class="icon">🎯</div>
+                <div>
+                    <h3>Business-Focused</h3>
+                    <p>Website content and features are planned around your business goals.</p>
+                </div>
+            </article>
+
+            <article class="card why-card reveal">
+                <div class="icon">📱</div>
+                <div>
+                    <h3>Mobile-Friendly</h3>
+                    <p>Layouts are designed to adapt to phones, tablets and computers.</p>
+                </div>
+            </article>
+
+            <article class="card why-card reveal">
+                <div class="icon">🤝</div>
+                <div>
+                    <h3>Clear Communication</h3>
+                    <p>Discuss your requirements and agree on the project scope before work begins.</p>
+                </div>
+            </article>
+
+            <article class="card why-card reveal">
+                <div class="icon">🧩</div>
+                <div>
+                    <h3>Useful Features</h3>
+                    <p>Add appropriate features such as contact details, galleries and WhatsApp links.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="features-section">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="pill">HAVE QUESTIONS?</span>
+            <h2>Frequently Asked <span class="accent">Questions</span></h2>
+            <p>Some useful information about our website creation process.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item reveal">
+                <summary>What types of websites can PUNITRO create?</summary>
+                <div class="faq-answer">
+                    We can work on static websites for shops, schools, small businesses, personal portfolios and service providers.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Will my website work on mobile phones?</summary>
+                <div class="faq-answer">
+                    We design responsive layouts so website content can adapt to different screen sizes. Testing is important before publishing.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Can customers contact my business through WhatsApp?</summary>
+                <div class="faq-answer">
+                    Yes. A WhatsApp link can open a conversation with your business when the correct phone number is configured.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Can I update my website later?</summary>
+                <div class="faq-answer">
+                    Yes. Website text, images and other content can be edited. The updated files must then be published again.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Can you help publish my website online?</summary>
+                <div class="faq-answer">
+                    We can help with publishing suitable static websites using services such as GitHub Pages.
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="pill">LET'S CONNECT</span>
+            <h2>Have a Project in <span class="accent">Mind?</span></h2>
+            <p>Tell us what you need. Let's discuss how a website could present your business online.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h3>Let's talk about your idea.</h3>
+                <p>Contact PUNITRO to discuss your website requirements.</p>
+
+                <div class="contact-item">
+                    <strong>💬 WhatsApp</strong>
+                    <a id="whatsappContact" href="#contact">Contact us on WhatsApp</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>✉️ Email</strong>
+                    <a id="emailContact" href="#contact">Contact us by email</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>🌐 Website</strong>
+                    <p>Modern websites for businesses, shops and schools.</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>✨ Our tagline</strong>
+                    <p>Your Vision. Our Creation.</p>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+                <h3>Send an Enquiry</h3>
+                <p>Fill in the details below to prepare your enquiry.</p>
+
+                <div class="form-group">
+                    <label for="customerName">Your Name *</label>
+                    <input id="customerName" name="customerName" type="text"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="businessName">Business Name</label>
+                    <input id="businessName" name="businessName" type="text"
+                           placeholder="Enter your business name">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Website Requirement *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Business Website</option>
+                        <option>Shop Website</option>
+                        <option>School Website</option>
+                        <option>Portfolio Website</option>
+                        <option>Website Redesign</option>
+                        <option>Other Requirement</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell Us About Your Project *</label>
+                    <textarea id="message" name="message"
+                              placeholder="Describe your website requirements"
+                              required></textarea>
+                </div>
+
+                <button class="btn" type="submit">Send Enquiry via WhatsApp ↗</button>
+
+                <p class="form-note">
+                    This form opens WhatsApp with your enquiry prepared.
+                    It does not store or directly submit your information.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+<section>
+    <div class="container">
+        <div class="cta-box reveal">
+            <span class="pill">YOUR NEXT STEP</span>
+            <h2>Let's Build Something <span class="accent">Great.</span></h2>
+            <p>Give your business a professional place on the internet.</p>
+            <a href="#contact" class="btn">Start a Conversation ↗</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-content">
+        <a href="#home" class="footer-logo">
+            <img src="punitro.png" alt="PUNITRO Logo">
+        </a>
+
+        <p>© <span id="currentYear"></span> PUNITRO. All rights reserved.</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" id="whatsappFloat"
+   href="#contact" aria-label="Contact PUNITRO on WhatsApp"
+   title="Contact us on WhatsApp">✆</a>
+
+<a class="back-top" id="backTop"
+   href="#home" aria-label="Back to top" title="Back to top">↑</a>
+
+<!-- JAVASCRIPT -->
+<script>
+/*
+  IMPORTANT:
+  Replace YOUR_NUMBER with your WhatsApp number.
+  Example for India: 919876543210
+  Use country code and digits only. Do not use + or spaces.
+
+  Replace YOUR_EMAIL with your real email address.
+*/
+
+const WHATSAPP_NUMBER = "916362462321";
+const CONTACT_EMAIL = "punitrittikurubar@gmail.com";
+
+function hasWhatsAppNumber() {
+    return /^\d{10,15}$/.test(WHATSAPP_NUMBER);
+}
+
+function hasContactEmail() {
+    return CONTACT_EMAIL !== "YOUR_EMAIL" &&
+           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONTACT_EMAIL);
+}
+
+function openWhatsApp(message) {
+    if (!hasWhatsAppNumber()) {
+        alert("Please configure your WhatsApp number in the website code first.");
+        return;
+    }
+
+    const url = "https://wa.me/" + WHATSAPP_NUMBER +
+                "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+/* MOBILE NAVIGATION */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+    });
+});
+
+/* WHATSAPP CONTACT LINKS */
+
+const whatsappMessage = "Hello PUNITRO! I would like to discuss a website project.";
+
+document.getElementById("whatsappContact").addEventListener("click", function (event) {
+    event.preventDefault();
+    openWhatsApp(whatsappMessage);
+});
+
+document.getElementById("whatsappFloat").addEventListener("click", function (event) {
+    event.preventDefault();
+    openWhatsApp(whatsappMessage);
+});
+
+/* EMAIL LINK */
+
+const emailContact = document.getElementById("emailContact");
+
+if (hasContactEmail()) {
+    emailContact.href = "mailto:" + CONTACT_EMAIL;
+    emailContact.textContent = CONTACT_EMAIL;
+} else {
+    emailContact.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert("Please configure your email address in the website code first.");
+    });
+}
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const business = document.getElementById("businessName").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !service || !message) {
+        alert("Please complete all required fields.");
+        return;
+    }
+
+    const enquiry =
+        "Hello PUNITRO! I would like to enquire about a website.\n\n" +
+        "Name: " + name + "\n" +
+        "Business: " + (business || "Not provided") + "\n" +
+        "Requirement: " + service + "\n" +
+        "Project details: " + message;
+
+    openWhatsApp(enquiry);
+});
+
+/* BACK TO TOP */
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", function () {
+    backTop.classList.toggle("show", window.scrollY > 350);
+});
+
+/* CURRENT YEAR */
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+/* REVEAL ANIMATIONS */
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll(".reveal").forEach(function (element) {
+        observer.observe(element);
+    });
+} else {
+    document.querySelectorAll(".reveal").forEach(function (element) {
+        element.classList.add("visible");
+    });
+}
+</script>
+
+</body>
+</html>
